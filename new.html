@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Matchmaker</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Existing styles */
+        #opinion-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px; /* Adjust this value for more or less curve */
+            cursor: pointer;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        #opinion-button:hover {
+            background-color: #0056b3;
+        }
+
+        #login-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 999;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px; /* Adjust this value for more or less curve */
+            cursor: pointer;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        #login-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* New styles for Top Charts section */
+        .top-charts {
+            float: left; /* Align to the left */
+            margin-right: 20px; /* Adjust spacing between the sections */
+            background-color: rgba(214, 209, 209, 0.9); /* Adjust background color and transparency */
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            position: absolute; /* Position absolutely */
+            top: 60%; /* Place it at the vertical center */
+            transform: translateY(-50%); /* Adjust to center vertically */
+            right: 0%; /* Move it to the right */
+        }
+
+        .top-charts h2 {
+            margin-top: 0;
+        }
+
+        .top-charts ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .top-charts li {
+            margin-bottom: 10px;
+        }
+
+        .top-charts img {
+            max-width: 200px; /* Increase the maximum image width */
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        /* Adjusted styles for preferences section */
+        #movie-preferences {
+            margin-top:0px; /* Added margin-top */
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(20px);
+            top: 60%;
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        #movie-preferences label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #get-recommendation-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #recommendation-container {
+            margin-left: 20px;
+        }
+
+        #recommendation-container h2 {
+            margin-top: 0;
+        }
+
+        #recommendation-container ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #recommendation-container li {
+            margin-bottom: 10px;
+        }
+
+        #get-recommendation-button:hover {
+            background-color: #0056b3;
+        }
+
+        form input {
+            outline: 0;
+            background: #f2f2f2;
+            width: 100%;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login button -->
+    <button id="login-button">Login</button>
+    <header>
+        <h1>Find Your Movie</h1>
+        <p>Your Perfect Movie Match.</p>
+    </header>
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search...">
+            <button id="search-button">Search</button>
+        </div>
+    </div>
+    <main>
+        <form id="movie-preferences">
+            <div>
+                <label for="genre">Select Your Preferences:</label>
+                <select name="genre" id="genre">
+                    <option value="">Select Genre</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="drama">Drama</option>
+                    <option value="scifi">Sci-Fi</option>
+                    <option value="animation">Animation</option>
+                </select>
+            </div>
+
+            <br>
+
+            <label for="actors">Favorite Actors (optional):</label>
+            <input type="text" name="actors" id="actors" placeholder="Separate by commas">
+
+            <br>
+            <button type="submit" id="get-recommendation-button">Find My Match</button>
+        </form>
+        <div class="top-charts">
+            <h2>Top Charts This Week</h2>
+            <ul>
+                <li><img src="nice.png" alt="Movie 2"></li>
+                <li><img src="hel.jpg" alt="Movie 3"></li>
+
+            </ul>
+        </div>
+        <div id="recommendation-container"></div>
+    </main>
+    <button id="opinion-button">Mood Matcher</button>
+    <script>
+        document.getElementById("opinion-button").addEventListener("click", function() {
+            window.open("op.html", "_blank"); // Open op.html in a new tab
+        });
+
+        // Link login page to the login button
+        document.getElementById("login-button").addEventListener("click", function() {
+            window.location.href = "l.html"; // Replace "login.html" with your login page URL
+        });
+    </script>
+</body>
+</html>

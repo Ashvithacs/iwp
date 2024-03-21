@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="op1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Movie Recommender</title>
+</head>
+<body>
+    <header>
+        <h1>Movie Recommender</h1>
+        <p>Answer a few questions and get a movie recommendation!</p>
+    </header>
+
+    <main>
+        <div id="container">
+            <div id="comments">
+                <h2>Comments</h2>
+                <textarea id="comments-textarea" placeholder="Write your comments here..." rows="5"></textarea>
+                <button type="button" onclick="submitComment()">Submit</button>
+            </div>
+            
+            <div id="movie-preferences">
+                <form id="questions-form">
+                    <div class="question" id="question1">
+                        <label for="mood">How are you feeling?</label>
+                        <div class="dropdown">
+                            <div class="select" onclick="toggleDropdown(this)">
+                                <span>Select your mood</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><button onclick="selectOption('Happy')"><img src="happy .png" alt="Happy"> Happy</button></li>
+                                <li><button onclick="selectOption('Sad')"><img src="sad.png" alt="Sad"> Sad</button></li>
+                                <li><button onclick="selectOption('Neutral')"><img src="neutral.png" alt="Neutral"> Neutral</button></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="next-button" onclick="showNextQuestion()">Next</button>
+                    </div>
+
+                    <div class="question hidden" id="question2">
+                        <label for="companions">Who are you with?</label>
+                        <div class="dropdown">
+                            <div class="select" onclick="toggleDropdown(this)">
+                                <span>Select your companions</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><button onclick="selectOption('Alone')">Alone</button></li>
+                                <li><button onclick="selectOption('With Friends')">With Friends</button></li>
+                                <li><button onclick="selectOption('With Family')">With Family</button></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="next-button" onclick="showNextQuestion()">Next</button>
+                    </div>
+
+                    <!-- Additional Questions -->
+                    <div class="question hidden" id="question3">
+                        <label for="genre">What genre do you prefer?</label>
+                        <div class="dropdown">
+                            <div class="select" onclick="toggleDropdown(this)">
+                                <span>Select your preferred genre</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><button onclick="selectOption('Action')">Action</button></li>
+                                <li><button onclick="selectOption('Comedy')">Comedy</button></li>
+                                <li><button onclick="selectOption('Drama')">Drama</button></li>
+                                <!-- Add more genres as needed -->
+                            </ul>
+                        </div>
+                        <button type="button" class="next-button" onclick="showNextQuestion()">Next</button>
+                    </div>
+
+                    <div class="question hidden" id="question4">
+                        <label for="rating">What is your preferred movie rating?</label>
+                        <div class="dropdown">
+                            <div class="select" onclick="toggleDropdown(this)">
+                                <span>Select your preferred rating</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><button onclick="selectOption('G')">G</button></li>
+                                <li><button onclick="selectOption('PG')">PG</button></li>
+                                <li><button onclick="selectOption('PG-13')">PG-13</button></li>
+                                <!-- Add more ratings as needed -->
+                            </ul>
+                        </div>
+                        <button type="button" class="next-button" onclick="showNextQuestion()">Next</button>
+                    </div>
+
+                    <div class="question hidden" id="question5">
+                        <label for="length">How long should the movie be?</label>
+                        <div class="dropdown">
+                            <div class="select" onclick="toggleDropdown(this)">
+                                <span>Select preferred length</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><button onclick="selectOption('Short')">Short</button></li>
+                                <li><button onclick="selectOption('Medium')">Medium</button></li>
+                                <li><button onclick="selectOption('Long')">Long</button></li>
+                                <!-- Add more length options as needed -->
+                            </ul>
+                        </div>
+                        <button type="button" class="next-button" onclick="showNextQuestion()">Next</button>
+                    </div>
+
+                    <div class="question hidden" id="question6">
+                        <label for="platform">On which platform would you prefer to watch the movie?</label>
+                        <div class="dropdown">
+                            <div class="select" onclick="toggleDropdown(this)">
+                                <span>Select your preferred platform</span>
+                                <i class="fas fa-caret-down"></i>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><button onclick="selectOption('Netflix')">Netflix</button></li>
+                                <li><button onclick="selectOption('Hulu')">Hulu</button></li>
+                                <li><button onclick="selectOption('Amazon Prime')">Amazon Prime</button></li>
+                                <!-- Add more platforms as needed -->
+                            </ul>
+                        </div>
+                        <button type="button" class="next-button" onclick="showNextQuestion()">Next</button>
+                    </div>
+                    <!-- End of Additional Questions -->
+
+                    <div id="recommendation-container" class="hidden">
+                        <h2>Your Movie Recommendation:</h2>
+                        <ul id="movie-recommendation"></ul>
+                    </div>
+
+                    <button type="button" id="get-recommendation-button" class="hidden" onclick="recommendMovie()">Get Recommendation</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="o.js"></script>
+</body>
+</html

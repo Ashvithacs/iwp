@@ -1,0 +1,147 @@
+/* Global styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("a.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ece6e6;
+}
+
+header {
+  background-color: rgba(78, 38, 38, 0.8);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 18px;
+  color: #666;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  margin: 0 auto;
+}#comments {
+  flex: 1;
+  margin-right: 20px;
+  position: relative;
+}
+
+#comments h2 {
+  margin-top: 0;
+}
+
+#comments textarea {
+  width: 200px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust the last value (0.3) to set the transparency */
+}
+
+#comments #submit-button {
+  position: absolute;
+  width: 200px; /* Same width as textarea */
+  top: 200px; /* Adjust as needed to position below the textarea */
+  left: 0; /* Align button to the left edge of the textarea */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(87, 60, 60, 0.8);
+  color: white;
+}
+
+#comments #submit-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+#movie-preferences {
+  flex: 1;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .select {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dropdown .select > span {
+  margin-right: 10px;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+  display: none; /* Hide dropdown menu by default */
+}
+
+.dropdown-menu.show {
+  display: block; /* Show dropdown menu when .show class is added */
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f2f2f2;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background-color: rgba(87, 60, 60, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
